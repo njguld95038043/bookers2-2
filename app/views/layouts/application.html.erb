@@ -69,6 +69,14 @@
       </nav>
     </header>
     <main>
+      <body>
+      <!-- ここから追加 -->
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+      <!-- ここまで追加 -->
+        <%= yield %>
+       </body>
      <%= yield %>
     </main>
     <footer>
